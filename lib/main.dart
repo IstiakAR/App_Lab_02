@@ -1,5 +1,5 @@
+// main.dart
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart'; // Make sure to add intl: ^0.18.0 to your pubspec.yaml
 
 void main() {
@@ -120,6 +120,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 // --- Page 1: SignUpPage ---
 class SignUpPage extends StatefulWidget {
@@ -583,182 +584,102 @@ class WelcomePage extends StatelessWidget {
 
 // --- Page 3: AboutUsPage ---
 class AboutUsPage extends StatelessWidget {
-  AboutUsPage({super.key});
-
-  final List<Map<String, String>> teamMembers = [
-    {
-      'name': 'Alice Wonderland',
-      'roll': 'Lead Developer', // More descriptive role
-      'email': 'alice.w@example.com',
-      'photo': 'https://xsgames.co/randomusers/assets/avatars/female/1.jpg'
-    },
-    {
-      'name': 'Bob The Builder',
-      'roll': 'UI/UX Designer',
-      'email': 'bob.b@example.com',
-      'photo': 'https://xsgames.co/randomusers/assets/avatars/male/1.jpg'
-    },
-    {
-      'name': 'Charlie Chaplin',
-      'roll': 'QA Engineer',
-      'email': 'charlie.c@example.com',
-      'photo': 'https://xsgames.co/randomusers/assets/avatars/male/2.jpg'
-    }
+  const AboutUsPage({Key? key}) : super(key: key);
+  
+  final List<TeamMember> teamMembers = const [
+    TeamMember(
+      name: 'Md. Akram Khan',
+      photoUrl: 'https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-1/455867519_122158386374098604_5084878240073979027_n.jpg?stp=cp0_dst-jpg_p60x60_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeHpacOiqeA_edOKYMTV64O5f-adtDDmpdl_5p20MOal2bNkrRGU8NUFhvl_8L-08uKyj4DWQC3W0LATWSAH3up-&_nc_ohc=HxTyff4dbGQQ7kNvwFeE9iI&_nc_oc=Adk-VlW_oR0FGD84Q30RYskhL2qX3ueaL3djKO8Ez1lcJion_kIfR14J9pDA8mcOVnM&_nc_zt=24&_nc_ht=scontent.fdac31-1.fna&_nc_gid=5IKQkmPH3F2mHBOZz5tCnA&oh=00_AfE7-YmRfYq5HInFLctnsuFHBI0mzb9eyKxxAZDHeHOpFA&oe=681832FC',
+    ),
+    TeamMember(
+      name: 'Dibbajothy Sarker',
+      photoUrl: 'https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-1/486641204_2156516244786476_238357396822176633_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeEk0neVa9vXFulyMwtfSnwOFCugTrbvYi4UK6BOtu9iLjkYzDjGa3ZXmSmegOgsD63MtJr__54jjjZG_OUDY4jH&_nc_ohc=oDAF3VrZhdgQ7kNvwFpmvvf&_nc_oc=AdkJnQ9fAV9HPyLMJn1W5FbTOH2z-3Ejd6viuuSZVbt6gP4YnSKSFlpC9rkX4gmQ9Yc&_nc_zt=24&_nc_ht=scontent.fdac31-1.fna&_nc_gid=vY1mgmaoNWCsFdggoWI1Xg&oh=00_AfGMnGwtZR22kygNwSIe-Ge145wmQk28pzVYvYFqYETXow&oe=68181BA9',
+    ),
+    TeamMember(
+      name: 'Istiak Ahammed Rhyme',
+      photoUrl: 'https://scontent.fdac31-2.fna.fbcdn.net/v/t39.30808-1/467490710_1759197604837381_8608898828610552358_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeFb78iSIzTOvVy-vUWsnmhLdOVXzNis_Al05VfM2Kz8CWGSPODtLAmrOTQFYlecpncccPI6zAyqnYiSbXNf5H96&_nc_ohc=-Ix5rN3OduoQ7kNvwHLn0BO&_nc_oc=AdmkI7D7KL3LGAqcQlTPmHtgHJIlo2PI0et29UTEbySDFnglzMfbpR_cmgunv6DRmTM&_nc_zt=24&_nc_ht=scontent.fdac31-2.fna&_nc_gid=Y1ryrWR8xb83KSlUqRVNmA&oh=00_AfFIm1BL_oWkhhM6JfgJAElTB-lGAXby7saHmRJnQ9hhDA&oe=68182EDA',
+    ),
+    TeamMember(
+      name: 'Jubayer Ahmed Sojib',
+      photoUrl: 'https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-1/489955293_1152567056352774_3842940229140587167_n.jpg?stp=c0.214.960.960a_dst-jpg_s160x160_tt6&_nc_cat=102&ccb=1-7&_nc_sid=1d2534&_nc_eui2=AeEbEngjM6JQY9aIdUylmBzQ4K4a18z9AivgrhrXzP0CKyCeEMiNwjavXYPEN5xaag9wBjOC4f37tlxrgFdRfnR4&_nc_ohc=BXrMPRYutv8Q7kNvwH6vsab&_nc_oc=AdnUKxGO0jdUxqg6h3D1ycHaJiwo8aDnueem6pu9xZcXoyiFjXrE3zlxoRLqZX8nIy0&_nc_zt=24&_nc_ht=scontent.fdac31-1.fna&_nc_gid=yyoxY-cf0qGOMY2RS26VFQ&oh=00_AfHz6D41L-Z2bliwU56Po1qeFR5ZjhSp3wApm8waxgTdUw&oe=6818315E',
+    ),
   ];
-
-  // Function to launch email app
-  Future<void> _launchEmail(BuildContext context, String email) async { // Added context for potential Snackbars
-    final Uri emailLaunchUri = Uri(
-      scheme: 'mailto',
-      path: email,
-      query: 'subject=Inquiry from Sign Up App v1.0.0', // Updated subject
-    );
-    try {
-      if (await canLaunchUrl(emailLaunchUri)) {
-        await launchUrl(emailLaunchUri);
-      } else {
-        // Show feedback if email app cannot be launched
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Could not open email app.'), backgroundColor: Colors.orangeAccent),
-        );
-      }
-    } catch (e) {
-      print('Error launching email: $e');
-       ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error opening email app.'), backgroundColor: Colors.redAccent),
-        );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('About Us')),
-      body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0), // Adjusted padding
-          children: [
-            // App logo with container
-            Center(
-              child: Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.5),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  Icons.app_registration, 
-                  size: 56,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-              ),
-            ),
-            SizedBox(height: 16),
-            
-            // App name with decoration
-            Center(
-              child: Container(
-                padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xFF00897B), Color(0xFF009688)],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(
-                  'Sign Up App',
+      appBar: AppBar(
+        title: Text('About Us'),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(24.0),
+            color: const Color.fromARGB(255, 51, 33, 243),
+            child: Column(
+              children: [
+                Text(
+                  'Flutter Sign Up Page App',
                   style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 28.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    letterSpacing: 1.0,
                   ),
                 ),
-              ),
-            ),
-            
-            SizedBox(height: 8),
-            Center(
-              child: Text(
-                'Version 1.0.0',
-                style: TextStyle(fontSize: 16, color: Colors.grey[600]),
-              ),
-            ),
-            
-            SizedBox(height: 32),
-            
-            // Section header with divider
-            Row(
-              children: [
-                Icon(Icons.group_outlined, color: Theme.of(context).colorScheme.primary),
-                SizedBox(width: 8),
+                SizedBox(height: 8.0),
                 Text(
-                  'Meet the Team',
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                Expanded(
-                  child: Divider(indent: 16, thickness: 1.5),
+                  'Building amazing mobile experiences',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
-            
-            SizedBox(height: 16),
-
-            // Team Member Cards - Improved Layout
-            ...teamMembers.map((member) => Card(
-                  elevation: 2, // Consistent elevation
-                  margin: EdgeInsets.symmetric(vertical: 10.0), // Increased vertical margin
-                  child: Padding( // Add padding inside the card
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row( // Use Row for better layout control
-                      children: [
-                        CircleAvatar(
-                          radius: 35, // Slightly larger avatar
-                          backgroundImage: NetworkImage(member['photo']!),
-                          backgroundColor: Colors.grey[200],
-                        ),
-                        SizedBox(width: 16), // Space between avatar and text
-                        Expanded( // Allow text to take available space
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(member['name']!, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                              SizedBox(height: 4),
-                              Text(member['roll']!, style: TextStyle(fontSize: 15, color: Colors.grey[700])),
-                              SizedBox(height: 4),
-                              InkWell( // Make email tappable
-                                onTap: () => _launchEmail(context, member['email']!),
-                                child: Text(
-                                  member['email']!,
-                                  style: TextStyle(fontSize: 14, color: Colors.indigo, decoration: TextDecoration.underline),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        IconButton( // Keep email icon button as well
-                          icon: Icon(Icons.email_outlined, color: Colors.indigo.withOpacity(0.7)),
-                          tooltip: 'Send Email to ${member['name']}',
-                          onPressed: () => _launchEmail(context, member['email']!),
-                        ),
-                      ],
-                    ),
-                  ),
-                )).toList(),
-
-            SizedBox(height: 32),
-            Center(
-              child: TextButton.icon(
-                icon: Icon(Icons.arrow_back),
-                label: Text('Go Back'),
-                onPressed: () => Navigator.pop(context),
+          ),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+              'Our Team',
+              style: TextStyle(
+                fontSize: 22.0,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ],
-        ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: teamMembers.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: NetworkImage(teamMembers[index].photoUrl),
+                      onBackgroundImageError: (exception, stackTrace) {
+                        // Handle image loading errors silently
+                      },
+                    ),
+                    title: Text(teamMembers[index].name),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
+}
+
+class TeamMember {
+  final String name;
+  final String photoUrl;
+
+  const TeamMember({
+    required this.name,
+    required this.photoUrl,
+  });
 }
